@@ -1,0 +1,38 @@
+{
+  "name": "lucia-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3012",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@prisma/client": "5.13.0",
+    "@react-email/components": "0.0.17",
+    "arctic": "^1.8.1",
+    "i": "^0.3.7",
+    "lucia": "^3.2.0",
+    "mailtrap": "^3.3.0",
+    "next": "14.2.3",
+    "nodemailer": "^6.9.13",
+    "oslo": "^1.2.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "@types/nodemailer": "^6.4.15",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8",
+    "prisma": "^5.13.0",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
