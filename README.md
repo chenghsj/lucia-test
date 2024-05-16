@@ -20,10 +20,8 @@ GOOGLE_CLIENT_ID=""
 GOOGLE_CLIENT_SECRET=""
 GOOGLE_REDIRECT_URI=""
 
-MAILTRAP_TOKEN = ""
-MAILTRAP_USERNAME = ""
-MAILTRAP_PASSWORD=""
-
-SENDER_EMAIL = ""
-RECIPIENT_EMAIL = ""
+# Gmail app password
+# https://myaccount.google.com/apppasswords
+SMTP_PASSWORD=""
+SMTP_EMAIL=""
 ```

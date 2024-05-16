@@ -43,7 +43,6 @@ export default async function Home() {
         <img src={user.avatarURL} className="w-6 h-6 rounded-full" />
         {user.username}
       </div>
-
     </main>
   );
 }

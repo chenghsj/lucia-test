@@ -30,9 +30,9 @@ model Session {
 }
 
 model EmailOTP {
-  id        Int       @id @default(autoincrement())
-  userId    String    @unique
+  id        String   @id @default(cuid())
+  userId    String   @unique
   code      String
-  expiresAt DateTime?
-  user      User      @relation(references: [id], fields: [userId], onDelete: Cascade)
+  expiresAt DateTime
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
 }

@@ -3,7 +3,6 @@ import { generateIdFromEntropySize } from "lucia";
 import { generateRandomString, alphabet } from "oslo/crypto";
 import { createDate, TimeSpan } from "oslo";
 import { cookies } from "next/headers";
-import { sendMail } from "@/lib/mailer";
 
 // export async function generateOTP(userId: string): Promise<string> {
 // 	await prisma.emailOTP.delete({
@@ -24,7 +23,7 @@ import { sendMail } from "@/lib/mailer";
 // }
 
 export async function POST(req: Request, res: Response): Promise<Response> {
-	sendMail();
+	// sendMail();
 	return new Response(null);
 	// const body = await req.json();
 	// let userId = generateIdFromEntropySize(10);

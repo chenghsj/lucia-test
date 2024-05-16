@@ -29,7 +29,7 @@ export async function GET(request: Request): Promise<Response> {
 			}
 		});
 		const googleUser: GoogleUser = await githubUserResponse.json();
-		console.log(googleUser);
+
 		// Replace this with your own DB client.
 		const existingUser = await prisma.user.findUnique({
 			where: {

@@ -7,7 +7,7 @@ export async function GET(): Promise<Response> {
 	const url = await github.createAuthorizationURL(state, {
 		scopes: ["user:email"]
 	});
-	console.log(url);
+
 	cookies().set("github_oauth_state", state, {
 		path: "/",
 		secure: process.env.NODE_ENV === "production",

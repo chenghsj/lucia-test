@@ -20,7 +20,7 @@ type GitHubEmails = GitHubEmail[]
 
 export async function GET(request: Request): Promise<Response> {
 	const url = new URL(request.url);
-	console.log("url", url);
+
 	const code = url.searchParams.get("code");
 	const state = url.searchParams.get("state");
 	const storedState = cookies().get("github_oauth_state")?.value ?? null;
@@ -45,7 +45,7 @@ export async function GET(request: Request): Promise<Response> {
 		const githubUser: GitHubUser = await githubUserResponse.json();
 		const githubEmails: GitHubEmails = await githubEmailResponse.json();
 		const githubEmail = githubEmails.find((email) => email.primary && email.verified);
-		console.log(githubEmail, githubUser);
+
 		if (!githubEmail || !githubUser.id) {
 			return new Response(null, {
 				status: 401
@@ -62,6 +62,15 @@ export async function GET(request: Request): Promise<Response> {
 			const session = await lucia.createSession(existingUser.id, {});
 			const sessionCookie = lucia.createSessionCookie(session.id);
 			cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+			await prisma.user.update({
+				where: {
+					id: existingUser.id
+				},
+				data: {
+					username: githubUser.login,
+					avatarURL: githubUser.avatar_url
+				}
+			})
 			return new Response(null, {
 				status: 302,
 				headers: {
@@ -92,7 +101,7 @@ export async function GET(request: Request): Promise<Response> {
 			}
 		});
 	} catch (e) {
-		console.log(e);
+
 		// the specific error message depends on the provider
 		if (e instanceof OAuth2RequestError) {
 			// invalid code
