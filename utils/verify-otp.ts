@@ -1,7 +1,7 @@
 'use server'
 
 import { cookies } from "next/headers"
-import { lucia, prisma } from "./auth"
+import { lucia, prisma } from "../lib/auth"
 
 export async function varifyOTP(email: string, code: string) {
 	try {

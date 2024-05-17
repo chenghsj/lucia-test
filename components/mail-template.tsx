@@ -31,7 +31,7 @@ export const VerifyIdentityEmail = ({
 				/> */}
 				<Text style={tertiary}>Verify Your Identity</Text>
 				<Heading style={secondary}>
-					Enter the following code to sing up.
+					Enter the following code to sign in.
 				</Heading>
 				<Section style={codeContainer}>
 					<Text style={code}>{validationCode}</Text>

@@ -13,14 +13,14 @@ export async function sendMail({ to, validationCode }: { to: string, validationC
 		},
 	});
 	try {
-		const testResult = await transport.verify();
+		await transport.verify();
 	} catch (error) {
 		console.log({ error });
 		return;
 	}
 
 	try {
-		const sendResult = await transport.sendMail({
+		await transport.sendMail({
 			from: SMTP_EMAIL,
 			to,
 			subject: 'Sign in to your account',

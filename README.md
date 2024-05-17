@@ -20,7 +20,7 @@ GOOGLE_CLIENT_ID=""
 GOOGLE_CLIENT_SECRET=""
 GOOGLE_REDIRECT_URI=""
 
-# Gmail app password
+# gmail app password
 # https://myaccount.google.com/apppasswords
 SMTP_PASSWORD=""
 SMTP_EMAIL=""

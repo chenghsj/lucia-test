@@ -24,7 +24,9 @@ export default async function RootLayout({
             <Link className="" href="/">Home</Link>
           </div>
         </nav>
-        {children}
+        <div className="flex flex-col items-center justify-center w-full h-full">
+          {children}
+        </div>
         <div><Toaster position='bottom-right' /></div>
       </body>
     </html>

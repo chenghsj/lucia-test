@@ -32,7 +32,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex flex-col items-center justify-center w-full h-full gap-4">
+    <div className="flex flex-col gap-4 items-center -translate-y-16">
       {user &&
         <form action={logout}>
           <button className="border rounded-lg px-4 py-1">Sign out</button>
@@ -43,6 +43,6 @@ export default async function Home() {
         <img src={user.avatarURL} className="w-6 h-6 rounded-full" />
         {user.username}
       </div>
-    </main>
+    </div>
   );
 }
